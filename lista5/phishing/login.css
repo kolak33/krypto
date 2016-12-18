@@ -1,0 +1,244 @@
+/*
+CSS for login
+*/
+
+/*
+@import url("dijit/Button.css");
+@import url("dijit/DropDownSelect.css");
+*/
+
+body {
+	font-family: Tahoma, sans-serif;
+    font-size:12px;
+}
+
+.dj_ie body {
+	/* We have to overwrite the font attribute from dojo as well, or we run
+	into problems on IE */
+	font: 12px Tahoma, sans-serif;
+}
+
+.Convergence-Login {
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:430px;
+	margin-top:-125px;
+	margin-left:-220px;
+	border-top: 2px solid #EDEDED;
+	border-left: 1px solid #EEEEEE;
+	border-bottom: 1px solid #8F8F8F;
+	border-right: 1px solid #B9B9B9;
+}
+
+.Convergence-Login-Border {
+	width: 428px;
+	border-top: 1px solid #F8F8F8;
+	border-left: 1px solid #F9F9F9;
+	border-bottom: 1px solid #DADADA;
+	border-right: 1px solid #E9E9E9;
+}
+
+.Convergence-Login-Banner {
+	padding: 7px 0 0 10px;
+
+}
+
+.Convergence-Login-Logo {
+	background-color: transparent;
+	background-image: url(../images/smallOracleLogo.gif?3.0.1.3.0_16070546);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 138px;
+	height: 18px;
+	padding: 0 0 10px 5px;
+	border-bottom: 2px solid #999;
+}
+
+
+.Convergence-Login-WelcomeMsg {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 0 5px 0;
+}
+
+.Convergence-Login-Notification {
+	margin: 2px 10px;
+	background-color: transparent;
+	background-image: url(../images/info.png?3.0.1.3.0_16070546);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	padding: 1px 0 0 22px;
+	color: red;
+	font-size: 11px;
+	height: 26px;
+}
+.Convergence-Login .Password-Expired-Message .ErrorMsg-Contianer .Error-Msg {
+	margin: 2px 10px;	
+	color: red;
+	font-size: 13px;
+	margin: -13px 0px 0px;
+}
+
+.Convergence-Login-Form {
+    margin: 0 30px 0 0px;
+	float: right;
+	width: 398px;
+}
+
+.Convergence-Login-SelectLang {
+    margin: 0 0px 0 10px;
+	float: left;
+}
+
+.Convergence-Login-FormRow {
+    padding-bottom: 8px;
+	text-align: right;
+}
+
+.Convergence-Login-Form label {
+    padding-right: 4px;
+}
+
+.Convergence-Login input[type=text],
+.Convergence-Login input[type=password]{
+    width: 125px;
+}
+
+.dj_webkit .Convergence-Login input[type=text],
+.dj_webkit .Convergence-Login input[type=password]{
+    padding: 2px;
+}
+
+div.Convergence-Login-Buttons {
+	padding-bottom: 0px;
+}
+
+div.Convergence-Login-FormButton {
+	width: 129px;
+	float: right;
+}
+
+.ChangePwdBtn {
+	margin-top: 13px;
+	float: left !important;
+	width: 136px !important;	
+}
+
+.dj_webkit div.Convergence-Login-FormButton {
+	width: 133px;
+}
+
+.dj_ff36_mac div.Convergence-Login-FormButton {
+	width: 131px;
+}
+.dj_webkit div.Convergence-Login-FormButton .ChangePwdBtn{
+	width: 137px;
+}
+
+.dj_ff36_mac div.Convergence-Login-FormButton .ChangePwdBtn{
+	width: 135px;
+}
+
+div.Convergence-Login-FormButton div {
+	text-align: left;
+}
+
+.dijitButton, dijitDropDownButton {
+	margin: 0;
+}
+
+.Convergence-Login .dijitButtonText,
+.Convergence-Login .dojoxDropDownSelectLabel {
+	font-size: 12px;
+}
+
+.Convergence-Login .dojoxDropDownSelect .dijitButtonContents{
+	padding: 1px 0 2px 1px;
+}
+
+.dojoxDropDownSelectFixedWidth {
+    width: 125px;
+}
+
+.dj_gecko .Convergence-Login-FormButton .dijitButtonNode {
+	padding: 0 0 1px 0;
+}
+
+.dj_ie .Convergence-Login-FormButton .dijitButtonNode {
+	padding: 0;
+}
+
+.dj_ie .Convergence-Login-FormButton .dijitButtonContents {
+	line-height: 12px;
+	height: 18px;
+}
+
+.dj_gecko .Convergence-Login-FormButton .ChangePwdBtn .dijitButtonNode {
+	padding: 0 0 1px 0;
+}
+
+.dj_ie .Convergence-Login-FormButton .ChangePwdBtn .dijitButtonNode {
+	padding: 0;
+}
+
+.dj_ie .Convergence-Login-FormButton .ChangePwdBtn .dijitButtonContents {
+	line-height: 12px;
+	height: 18px;
+}
+
+.Convergence-Login-RedBand {
+	margin: 3px 0 0 -1px;
+	background-image:url("../images/redband.png?3.0.1.3.0_16070546");
+	background-position: left top;
+	height: 30px;
+	width: 430px;
+}
+
+.Convergence-Login .Password-Expired-Message {	
+    width: 424px;
+    height: 89px;
+    background-color: #ffedcb;
+    border: 1px solid #fedfa5;	
+    margin-left: 1px;
+    margin-bottom: 1px;
+}
+
+.Convergence-Login .Password-Expired-Message .ErrorMsg-Contianer {
+    height: auto;    
+    margin-left: 7px;
+    margin-top: 22px;
+}
+.Convergence-Login .Password-Expired-Message .ErrorMsg-Contianer .Error-Icon {	
+    float: left;    
+    width: 35px;
+    height: 35px;
+    margin-right: 2px;
+    background-color: transparent;
+    background-image: url("../images/info-icon.png?3.0.1.3.0_16070546"); 
+    background-repeat: no-repeat;
+}
+
+.dj_ie .Convergence-Login .Password-Expired-Message .ErrorMsg-Contianer .Error-Icon {
+    margin-top: -8px;
+}
+.dj_webkit .Convergence-Login-RedBand {
+	width: 430px;
+}
+
+.Convergence-Login-Copyright {
+	font-size: 11px;
+	padding: 2px 10px 2px 8px;
+	text-align:center;
+}
+
+#spinner {
+    position: absolute;
+    padding-top: 30px;
+    background:#FFF url("../images/login-spinner.gif?3.0.1.3.0_16070546") no-repeat top left; /* NOT THEMED */
+    width: 100px;
+}
+
+#progress{
+    text-align: left;
+}

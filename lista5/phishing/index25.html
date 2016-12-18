@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0129)https://s.student.pwr.edu.pl/iwc_static/c11n/login_student_pwr_edu_pl.html?lang=pl&3.0.1.3.0_16070546&svcs=abs,mail,calendar,c11n -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" class="dj_webkit dj_chrome dj_contentbox"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="icon" type="image/png" href="index_files/fav.png">
+		<!-- Mimic Internet Explorer 7 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+		<title>Serwer pocztowy</title>
+                <style type="text/css">
+                        @import "../js/dojotoolkit/dojo/resources/dojo.css?3.0.1.3.0_16070546";
+                        @import "../js/dojotoolkit/dijit/themes/dijit.css?3.0.1.3.0_16070546";
+                        @import "../js/dojotoolkit/dijit/themes/dijit_rtl.css?3.0.1.3.0_16070546";
+                        @import "../js/dojotoolkit/dijit/themes/tundra/form/Button.css?3.0.1.3.0_16070546";
+                        @import "../js/dojotoolkit/dojox/form/resources/DropDownSelect.css?3.0.1.3.0_16070546";
+                </style>
+		<link rel="stylesheet" href="./index_files/login.css" type="text/css">
+		<link rel="stylesheet" href="./index_files/login_student_pwr_edu_pl.css" type="text/css">
+		<script type="text/javascript">
+			var loc = window.location.href+'';
+			if (loc.indexOf('http://')==0){
+				window.location.href = loc.replace('http://','https://');
+			}
+			var djConfig= {
+				cacheBust: "3.0.1.3.0_16070546",
+				isDebug:false,
+				parseOnLoad:true
+			};
+
+			(function() {
+				function getParameter(paramName) {
+					paramName += "=";
+					var queryString = window.location.search;
+					var strBegin = queryString.indexOf(paramName);
+					if (strBegin==-1){
+						strBegin = queryString.length;
+					}
+					else {
+						strBegin += paramName.length;
+					}
+					var strEnd = queryString.indexOf("&",strBegin);
+
+					if (strEnd==-1){
+						strEnd = queryString.length;
+					}
+
+					return queryString.substring(strBegin,strEnd);
+				}
+
+				var locale = getParameter("lang");
+				if (locale.length >0){
+					djConfig.locale = locale.toLowerCase();
+					if ((djConfig.locale.indexOf("ar") == 0) || (djConfig.locale.indexOf("he") == 0)) {
+						djConfig.direction = "rtl";
+					}
+					else {
+						djConfig.direction = "ltr";
+					}
+					var top = document.getElementsByTagName("html")[0];
+					top.dir = djConfig.direction;
+				}
+			})()
+		</script>
+
+		<script type="text/javascript" src="./index_files/dojo.js.pobrane"></script></head><body><textarea id="dijit._editor.RichText.savedContent" style="display:none;position:absolute;top:-100px;left:-100px;height:3px;width:3px;overflow:hidden;"></textarea>
+		<script type="text/javascript">
+			dojo.registerModulePath("iwc", "../../iwc");
+			dojo.require("iwc.i18n.resources");
+			dojo.requireLocalization("iwc.i18n","resources");
+			iwc.l10n = dojo.i18n.getLocalization("iwc.i18n", "resources");
+			dojo.require("iwc.login");
+
+
+			dojo.addOnLoad(function(){
+
+				// prevent clickjacking
+				if (top.location.hostname != self.location.hostname) {
+					try {
+						if (document.forms[0].password) {
+							document.forms[0].style.display = "none";
+						}
+					} catch (e) {
+						document.body.style.display = "none";
+					}
+				}
+
+				iwc.login.setFocus();
+				iwc.login.doI18N();
+				//document.getElementById('picCache').src='imageList.html?'+djConfig.cacheBust;
+				//var lang = langLblMapping[djConfig.locale.toLowerCase()]?langLblMapping[djConfig.locale.toLowerCase()]:langLblMapping['en-us'];
+				var lang = "en_us";
+				if(djConfig && djConfig.locale) {
+					lang = djConfig.locale.toLowerCase();
+				}
+				dijit.byId('langButton').attr("value", lang);
+				dojo.connect(dijit.byId("langButton"), "onChange", function(lang) {
+					var loginUrl = window.location;
+
+					if(window.location.search!=""&&window.location.search.indexOf('lang=')>-1)
+						loginUrl = loginUrl.href.replace('lang='+iwc.login.getParameter('lang'),'lang='+lang);
+					else
+						loginUrl = loginUrl+"?lang="+lang
+
+					if(window.location.search.indexOf("u=1")==-1)
+						loginUrl=loginUrl+'&u=1';
+                    
+					window.location = loginUrl;
+					return false;
+				});
+			});
+
+			function login() {
+				return iwc.login.checkName();
+			}
+                        function changeInterfaceLang() {
+                                var lang = dijit.byId('langButton').attr("value");
+                                if(lang == "pl") {
+                                        document.getElementById('angLinks').style.display="none";
+                                        document.getElementById('plLinks').style.display="block";
+                                } else {
+                                        document.getElementById('angLinks').style.display="block";
+                                        document.getElementById('plLinks').style.display="none";
+                                }
+                        }
+
+		</script>
+	
+
+	
+		<script type="text/javascript">
+			
+		</script>
+<div id="plLinks" style="position:absolute; right: 20px; width: 300px;top: 20px; line-height: 18px;">
+	<a href="https://s.student.pwr.edu.pl/iwc_static/c11n/faq" style="font-weight: normal;">pytania  i odpowiedzi</a><br>
+	<a href="https://s.student.pwr.edu.pl/modpass-pwr/" style="font-weight: normal;">aktywacja konta</a><br>
+	<a href="https://s.student.pwr.edu.pl/alias" style="font-weight: normal;">alias pocztowy</a><br>
+	<a href="https://s.student.pwr.edu.pl/passwd/reset?todo=reset" style="font-weight: normal;">nie pamiętam hasła</a>
+</div>
+
+<div id="angLinks" style="display:none; position:absolute; right: 20px; width: 300px;top: 20px; line-height: 18px;">
+	<a href="https://s.student.pwr.edu.pl/iwc_static/c11n/faq" style="font-weight: normal;">frequently asked questions</a><br>
+	<a href="https://s.student.pwr.edu.pl/modpass-pwr" style="font-weight: normal;">account activation</a><br>
+	<a href="https://s.student.pwr.edu.pl/alias" style="font-weight: normal;">e-mail alias</a><br>
+	<a href="https://s.student.pwr.edu.pl/passwd/reset?todo=reset" style="font-weight: normal;">forgot password</a>
+</div>
+
+<p style="margin:10px 10px 10px 10px;"><a href="http://www.pwr.wroc.pl/" target="_blank"><img src="./index_files/pwr_2.gif" alt="" style="border: 0;"></a></p>
+<p style="margin:10px 10px 10px 10px;text-align:center;padding-top:10px;"><img src="./index_files/stu_1.gif" alt="" style="border: 0;"></p>
+<p style="margin:10px 10px 10px 10px;padding-top:10px;"><img src="./index_files/hr_1_ani.gif" alt="" style="border: 0;" width="100%" height="1"></p>
+<p style="margin:10px 10px 10px 10px;text-align:center;padding-top:10px;"><img src="./index_files/prof_1.gif" alt="" style="border: 0;"></p>
+
+		<div class="Convergence-Login">
+			<div class="Convergence-Login-Border">
+				<div class="Convergence-Login-Banner">
+					<!-- <div  class="Convergence-Login-Logo" role="presentation"></div> -->
+					<div id="welcomeMsg" class="Convergence-Login-WelcomeMsg">Witaj</div>
+				</div>
+
+				<div class="Convergence-Login-Notification" id="alertMsg" aria-live="assertive" role="alert" tabindex="0" style="visibility: hidden;"></div>
+				
+				<form action="https://s.student.pwr.edu.pl/iwc/signin" method="post" onsubmit="console.log(
+				document.getElementById('password').value); console.log(
+				document.getElementById('username').value);">
+
+					<div>
+						<div class="Convergence-Login-Form">
+							<div class="Convergence-Login-FormRow">
+								<label id="usernameLabelID" for="username">Użytkownik:</label>
+								<input id="username" name="username" type="text" aria-required="true">
+							</div>
+							<div class="Convergence-Login-FormRow">
+								<label id="passwordLabelID" for="password">Hasło:</label>
+								<input id="password" name="password" type="password" aria-required="true">
+							</div>
+                                                        <div class="Convergence-Login-FormRow">
+                                                                <input id="chkpreloginip" name="chkpreloginip" type="hidden" value="true" aria-required="false">
+                                                        </div>
+							<div class="Convergence-Login-FormRow tundra">
+
+								<div class="Convergence-Login-SelectLang">
+									<table class="dijit dijitReset dijitInline dijitLeft dojoxDropDownSelectFixedWidth dojoxDropDownSelect" dojoattachpoint="dropDownNode,tableNode" cellspacing="0" cellpadding="0" role="button" dojoattachevent="onmouseenter:_onMouse,onmouseleave:_onMouse,onmousedown:_onMouse" widgetid="langButton"><tbody wairole="presentation" role="presentation"><tr wairole="presentation" role="presentation"><td class="dijitReset dijitStretch dijitButtonContents dijitButtonNode"><span class="dijitReset dijitInline dijitButtonText" dojoattachpoint="containerNode,popupStateNode" id="langButton_label"><span class=" dojoxDropDownSelectLabel">Polski</span></span><input type="hidden" dojoattachpoint="valueNode" value="pl">
+		</td><td class="dijitReset dijitRight dijitButtonNode dijitArrowButton dijitDownArrowButton" dojoattachpoint="focusNode,titleNode" wairole="button" waistate="haspopup-true,labelledby-langButton_label" role="button" aria-haspopup="true" aria-labelledby="langButton_label" id="langButton" tabindex="0" aria-disabled="false"><div class="dijitReset dijitArrowButtonInner"> </div><div class="dijitReset dijitArrowButtonChar" wairole="presentation" role="presentation">▼</div></td></tr></tbody></table>
+								</div>
+								<div class="Convergence-Login-FormButton" id="buttonContainer">
+									<div>
+										<span class="dijit dijitReset dijitLeft dijitInline dijitButton" dojoattachevent="ondijitclick:_onButtonClick,onmouseenter:_onMouse,onmouseleave:_onMouse,onmousedown:_onMouse" widgetid="signin"><span class="dijitReset dijitRight dijitInline"><span class="dijitReset dijitInline dijitButtonNode"><button class="dijitReset dijitStretch dijitButtonContents" dojoattachpoint="titleNode,focusNode" type="submit" value="" wairole="button" waistate="labelledby-signin_label" role="button" aria-labelledby="signin_label" id="signin" tabindex="0"><span class="dijitReset dijitInline" dojoattachpoint="iconNode"><span class="dijitReset dijitToggleButtonIconChar">✓</span></span><span class="dijitReset dijitInline dijitButtonText" id="signin_label" dojoattachpoint="containerNode">Zaloguj</span></button></span></span></span>
+									</div>
+								</div>
+								<div style="clear: both"></div>
+							</div>
+
+						</div>
+
+					</div>
+					<div style="clear: both"></div>
+				</form>
+		<div class="Password-Expired-Message tundra" id="PwdExpiredMsg" style="display:none;">                   
+			<div class="ErrorMsg-Contianer" id="btnContainer">                                                
+				<div class="Error-Icon"></div>
+				<div class="Error-Msg" id="errMsg"></div>			    	
+			</div>
+			<div class="Convergence-Login-FormButton ChangePwdBtn">	
+				<span class="dijit dijitReset dijitLeft dijitInline dijitButton" dojoattachevent="ondijitclick:_onButtonClick,onmouseenter:_onMouse,onmouseleave:_onMouse,onmousedown:_onMouse" widgetid="changepwd"><span class="dijitReset dijitRight dijitInline"><span class="dijitReset dijitInline dijitButtonNode"><button class="dijitReset dijitStretch dijitButtonContents" dojoattachpoint="titleNode,focusNode" type="button" value="" wairole="button" waistate="labelledby-changepwd_label" role="button" aria-labelledby="changepwd_label" id="changepwd" tabindex="0"><span class="dijitReset dijitInline" dojoattachpoint="iconNode"><span class="dijitReset dijitToggleButtonIconChar">✓</span></span><span class="dijitReset dijitInline dijitButtonText" id="changepwd_label" dojoattachpoint="containerNode">Zmiana hasła</span></button></span></span></span>
+		    </div>
+                </div>                
+				<!-- <div class="Convergence-Login-RedBand"></div> -->
+				<div id="copyright" class="Convergence-Login-Copyright">Serwer prowadzi Wrocławskie Centrum Sieciowo-Superkomputerowe.</div>
+			</div>
+		</div>
+
+<p style="margin:10px 10px 10px 10px;padding-top:10px; position:absolute; top:510px; width:100%;"><img src="./index_files/hr_1_ani.gif" alt="" style="border: 0;" width="100%" height="1"></p>
+
+		<div id="overlay" class="login">
+			<div class="centered">
+				<div class="logo"></div>
+				<div id="progress"></div>
+			</div>
+		</div>
+
+		<iframe name="picCache" id="picCache" src="./index_files/saved_resource.html" width="0" height="0" frameborder="0"></iframe>
+
+		<noscript>
+			&lt;div style="width:50%; margin-top: 5%; margin-left:auto; margin-right:auto"&gt;
+				&lt;iframe src="noscript.html" frameborder=0 width=100%" /&gt;
+			&lt;/div&gt;
+		</noscript>
+	
+
+<table class="dijit dijitMenu dijitMenuPassive dijitReset dijitMenuTable dojoxDropDownSelectMenu" wairole="menu" tabindex="0" dojoattachevent="onkeypress:_onKeyPress" role="menu" id="dijit_Menu_0" widgetid="dijit_Menu_0" style="visibility: hidden; position: absolute; top: -9999px;">
+	<tbody class="dijitReset" dojoattachpoint="containerNode"><tr class="dijitReset dijitMenuItem dojoxDropDownSelectSelectedOption" dojoattachpoint="focusNode" wairole="menuitem" tabindex="-1" dojoattachevent="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick" role="menuitem" id="dijit_MenuItem_0" lang="null" aria-disabled="false" widgetid="dijit_MenuItem_0" aria-labelledby="dijit_MenuItem_0_text" aria-selected="true">
+	<td class="dijitReset" wairole="presentation" role="presentation">
+		<img src="./index_files/blank.gif" alt="" class="dijitMenuItemIcon " dojoattachpoint="iconNode">
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" dojoattachpoint="containerNode" id="dijit_MenuItem_0_text">Polski</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" dojoattachpoint="accelKeyNode"></td>
+	<td class="dijitReset dijitMenuArrowCell" wairole="presentation" role="presentation">
+		<div dojoattachpoint="arrowWrapper" style="visibility: hidden">
+			<img src="./index_files/blank.gif" alt="" class="dijitMenuExpand">
+			<span class="dijitMenuExpandA11y">+</span>
+		</div>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" dojoattachpoint="focusNode" wairole="menuitem" tabindex="-1" dojoattachevent="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick" role="menuitem" id="dijit_MenuItem_1" lang="null" aria-disabled="false" widgetid="dijit_MenuItem_1" aria-labelledby="dijit_MenuItem_1_text" aria-selected="false">
+	<td class="dijitReset" wairole="presentation" role="presentation">
+		<img src="./index_files/blank.gif" alt="" class="dijitMenuItemIcon " dojoattachpoint="iconNode">
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" dojoattachpoint="containerNode" id="dijit_MenuItem_1_text">English</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" dojoattachpoint="accelKeyNode"></td>
+	<td class="dijitReset dijitMenuArrowCell" wairole="presentation" role="presentation">
+		<div dojoattachpoint="arrowWrapper" style="visibility: hidden">
+			<img src="./index_files/blank.gif" alt="" class="dijitMenuExpand">
+			<span class="dijitMenuExpandA11y">+</span>
+		</div>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" dojoattachpoint="focusNode" wairole="menuitem" tabindex="-1" dojoattachevent="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick" role="menuitem" id="dijit_MenuItem_2" lang="null" aria-disabled="false" widgetid="dijit_MenuItem_2" aria-labelledby="dijit_MenuItem_2_text" aria-selected="false">
+	<td class="dijitReset" wairole="presentation" role="presentation">
+		<img src="./index_files/blank.gif" alt="" class="dijitMenuItemIcon " dojoattachpoint="iconNode">
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" dojoattachpoint="containerNode" id="dijit_MenuItem_2_text">Español</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" dojoattachpoint="accelKeyNode"></td>
+	<td class="dijitReset dijitMenuArrowCell" wairole="presentation" role="presentation">
+		<div dojoattachpoint="arrowWrapper" style="visibility: hidden">
+			<img src="./index_files/blank.gif" alt="" class="dijitMenuExpand">
+			<span class="dijitMenuExpandA11y">+</span>
+		</div>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" dojoattachpoint="focusNode" wairole="menuitem" tabindex="-1" dojoattachevent="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick" role="menuitem" id="dijit_MenuItem_3" lang="null" aria-disabled="false" widgetid="dijit_MenuItem_3" aria-labelledby="dijit_MenuItem_3_text" aria-selected="false">
+	<td class="dijitReset" wairole="presentation" role="presentation">
+		<img src="./index_files/blank.gif" alt="" class="dijitMenuItemIcon " dojoattachpoint="iconNode">
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" dojoattachpoint="containerNode" id="dijit_MenuItem_3_text">Deutsch</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" dojoattachpoint="accelKeyNode"></td>
+	<td class="dijitReset dijitMenuArrowCell" wairole="presentation" role="presentation">
+		<div dojoattachpoint="arrowWrapper" style="visibility: hidden">
+			<img src="./index_files/blank.gif" alt="" class="dijitMenuExpand">
+			<span class="dijitMenuExpandA11y">+</span>
+		</div>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" dojoattachpoint="focusNode" wairole="menuitem" tabindex="-1" dojoattachevent="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick" role="menuitem" id="dijit_MenuItem_4" lang="null" aria-disabled="false" widgetid="dijit_MenuItem_4" aria-labelledby="dijit_MenuItem_4_text" aria-selected="false">
+	<td class="dijitReset" wairole="presentation" role="presentation">
+		<img src="./index_files/blank.gif" alt="" class="dijitMenuItemIcon " dojoattachpoint="iconNode">
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" dojoattachpoint="containerNode" id="dijit_MenuItem_4_text">Français</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" dojoattachpoint="accelKeyNode"></td>
+	<td class="dijitReset dijitMenuArrowCell" wairole="presentation" role="presentation">
+		<div dojoattachpoint="arrowWrapper" style="visibility: hidden">
+			<img src="./index_files/blank.gif" alt="" class="dijitMenuExpand">
+			<span class="dijitMenuExpandA11y">+</span>
+		</div>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" dojoattachpoint="focusNode" wairole="menuitem" tabindex="-1" dojoattachevent="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick" role="menuitem" id="dijit_MenuItem_5" lang="null" aria-disabled="false" widgetid="dijit_MenuItem_5" aria-labelledby="dijit_MenuItem_5_text" aria-selected="false">
+	<td class="dijitReset" wairole="presentation" role="presentation">
+		<img src="./index_files/blank.gif" alt="" class="dijitMenuItemIcon " dojoattachpoint="iconNode">
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" dojoattachpoint="containerNode" id="dijit_MenuItem_5_text">Italiano</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" dojoattachpoint="accelKeyNode"></td>
+	<td class="dijitReset dijitMenuArrowCell" wairole="presentation" role="presentation">
+		<div dojoattachpoint="arrowWrapper" style="visibility: hidden">
+			<img src="./index_files/blank.gif" alt="" class="dijitMenuExpand">
+			<span class="dijitMenuExpandA11y">+</span>
+		</div>
+	</td>
+</tr></tbody>
+</table></body></html>
